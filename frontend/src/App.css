@@ -1,0 +1,300 @@
+/* Landing Page Styles */
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 50%, var(--neutral-900) 100%);
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.landingPageContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/public/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.landingPageContainer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.landingPageContainer nav {
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.landingPageContainer nav h2 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-200), var(--accent-200));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.025em;
+}
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.landingPageContainer nav .navlist p {
+  cursor: pointer;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  font-weight: 500;
+  position: relative;
+}
+
+.landingPageContainer nav .navlist p:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.landingPageContainer nav .navlist div[role='button'] {
+  background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.landingPageContainer nav .navlist div[role='button']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-slow);
+}
+
+.landingPageContainer nav .navlist div[role='button']:hover::before {
+  left: 100%;
+}
+
+.landingPageContainer nav .navlist div[role='button']:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-16) var(--space-8);
+  height: calc(100vh - 120px);
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: var(--space-16);
+}
+
+.landingMainContainer > div:nth-child(1) {
+  flex: 1;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.landingMainContainer > div:nth-child(1) h1 {
+  font-size: var(--text-6xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.025em;
+}
+
+.landingMainContainer > div:nth-child(1) p {
+  font-size: var(--text-xl);
+  color: var(--neutral-200);
+  margin-bottom: var(--space-8);
+  font-weight: 400;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button'] {
+  background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-xl);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-slow);
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button']:hover::before {
+  left: 100%;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button']:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.landingMainContainer > div:nth-child(2) {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.landingMainContainer > div:nth-child(2) img {
+  max-height: 70vh;
+  width: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  transition: transform var(--transition-slow);
+}
+
+.landingMainContainer > div:nth-child(2) img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Bar */
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-8);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navBar h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-100), white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.025em;
+}
+
+/* Meet Container */
+.meetContainer {
+  display: flex;
+  padding: var(--space-12) var(--space-8);
+  min-height: calc(100vh - 80px);
+  gap: var(--space-12);
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--neutral-50) 0%, var(--primary-50) 100%);
+  position: relative;
+}
+
+.meetContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.meetContainer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.leftPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.rightPanel > img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  transition: transform var(--transition-slow);
+}
+
+.rightPanel > img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landingMainContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-8) var(--space-4);
+    gap: var(--space-8);
+  }
+  
+  .landingMainContainer > div:nth-child(1) h1 {
+    font-size: var(--text-4xl);
+  }
+  
+  .landingMainContainer > div:nth-child(2) img {
+    max-height: 50vh;
+  }
+  
+  .meetContainer {
+    flex-direction: column;
+    padding: var(--space-8) var(--space-4);
+    gap: var(--space-8);
+  }
+  
+  .landingPageContainer nav {
+    padding: var(--space-4);
+  }
+  
+  .landingPageContainer nav .navlist {
+    gap: var(--space-4);
+  }
+}
